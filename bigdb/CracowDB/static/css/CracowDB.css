@@ -1,0 +1,17 @@
+body {
+	padding-left: 15px;
+	line-height: 14px;
+}
+
+h1 {
+    color: #5C52A5;
+    font-family: "Verdana";
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.kwtype {
+    color: #BB0000;
+    font-family: "Verdana";
+    font-size: 14px;
+}

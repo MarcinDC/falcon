@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/CracowDB.css' %}">
+<body>
+
+{% for post in kwrecs %}
+    <div>
+        <p>
+        	<h1>Numer: {{ post.kw_number }}</h1>
+        	<div class='kwtype'>{{ post.get_kw_type }}</div>
+        	{{ post.get_date_of_save|linebreaksbr }}
+        </p>
+        <p>&nbsp;</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>

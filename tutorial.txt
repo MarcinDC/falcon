@@ -1,0 +1,39 @@
+cd c:\Source\python
+mkdir falcon
+cd falcon
+python -m venv falcon_env
+falcon_env\Scripts\activate
+python -m pip install --upgrade pip
+
+utworzenie pliku requirements.txt
+
+pip install -r requirements.txt
+django-admin.exe startproject bigdb
+
+W settings.py zmiana:
+TIME_ZONE z 'UTC' na 'Europe/Warsaw'
+LANGUAGE_CODE z 'en-us' na 'pl'
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+
+Dodanie w settings.py wpisu:
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+cd bigdb
+python manage.py migrate
+python manage.py runserver
+
+python manage.py startapp CracowDB
+
+dodanie w bigdb\CracowDB\models.py klasy kwdata
+
+dodanie w bigdb\bigdb\settings.py w INSTALLED_APPS wpisu 'CracowDB'
+
+python manage.py makemigrations CracowDB
+
+python manage.py migrate CracowDB
+
+dodanie w bigdb\CracowDB\admin.py
+from .models import kwdata
+admin.site.register(kwdata)
+
+python manage.py createsuperuser
