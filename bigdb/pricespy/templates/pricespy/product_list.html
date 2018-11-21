@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/pricespy.css' %}">
+<body>
+
+{% for product in products %}
+    <div>
+        <p>
+        	<a href='{{ product.GetProductLink }}'><h1>{{ product.name}}</h1></a>
+        	<div class='kwtype'>{{ product.code }}</div>
+        	{{ post.score|linebreaksbr }}
+        	<img src='{{ product.GetPhotoLink }}'>
+        </p>
+        <p>&nbsp;</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>

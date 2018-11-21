@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import kwdata
+from .models import one_product
 
 # Register your models here.
 
-admin.site.register(kwdata)
+admin.site.register(one_product)
